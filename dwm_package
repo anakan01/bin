@@ -1,0 +1,11 @@
+dwm_package() {
+    printf "%s" "$SEP1"
+    if [ "$IDENTIFIER" = "unicode" ]; then
+        printf "%s" "$(pacman -Qu | grep -Fcv "[ignored]" | sed "s/^/📦/;s/^📦0$//g")"
+    else
+        printf "%s" "$(pacman -Qu | grep -Fcv "[ignored]" | sed "s/^/pkg/;s/^pkg0$//g")"
+    fi
+    printf "%s\n" "$SEP2"
+}
+
+dwm_package
