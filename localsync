@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -avrP --delete-after --rsh='ssh' root@akiranakano.info:/var/www/main/ ~/documents/main/
